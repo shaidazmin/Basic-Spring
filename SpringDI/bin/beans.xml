@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="bike" class="com.springdi.Bike"> Using setter <property name="modelName" 
+		value="Yeamaha V3"></property> <property name="price" value="270000"></property> 
+		using constractor <constructor-arg name="modelName" value="TVS Appache V4"></constructor-arg> 
+		<constructor-arg name="price" value="280000"></constructor-arg> </bean> -->
+
+<!--  ..........................................................................  -->
+
+		<!-- Using Refrence -->
+		
+	<bean id="shopObj" class="com.springdi.Shop"></bean>
+
+	<bean id="car" class="com.springdi.Car">
+
+		<constructor-arg name="shop" ref="shopObj"></constructor-arg>
+
+		<constructor-arg name="brand" value="Toyota"></constructor-arg>
+
+	</bean>
+	
+		<bean id="truck" class="com.springdi.Truck">
+
+		<constructor-arg name="shop" ref="shopObj"></constructor-arg>
+
+	</bean>
+
+<!-- ............................................................. -->
+
+	<!-- Using Object -->
+	
+<!-- 
+	<bean id="car" class="com.springdi.Car">
+
+		<constructor-arg name="shop">
+			<bean class="com.springdi.Shop">
+				<constructor-arg name="modelName" value="Allion A15"></constructor-arg>
+				<constructor-arg name="price" value="1820000"></constructor-arg>
+			</bean>
+		</constructor-arg>
+
+		<constructor-arg name="brand" value="Toyota"></constructor-arg>
+
+	</bean> -->
+
+
+<!-- 	Truck Class -->
+
+<!-- 	<bean id="truck" class="com.springdi.Truck">
+
+		<constructor-arg name="shop">
+			<bean class="com.springdi.Shop">
+				<constructor-arg name="modelName" value="TATA"></constructor-arg>
+				<constructor-arg name="price" value="1820000"></constructor-arg>
+			</bean>
+		</constructor-arg>
+
+	</bean> -->
+
+</beans>
