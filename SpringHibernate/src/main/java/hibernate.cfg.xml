@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <!DOCTYPE hibernate-configuration SYSTEM
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"> -->
+
+<!DOCTYPE hibernate-configuration
+        PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+        
+
+<!-- <!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration.dtd">-->
+
+
+<hibernate-configuration> 
+
+	<session-factory>
+	
+	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	<property name="connection.url">jdbc:mysql://localhost:3306/spring_hib</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password"></property>
+	<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+	<property name="hbm2ddl.auto">update</property> <!-- create -->
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property>
+	
+<!-- 	second Level Cache config -->
+
+	<property name="cache.use_second_level_cache">true</property>
+	<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+	
+	<mapping class="com.spring.hibernate.SpringHibernate.Student"/>
+	<mapping class="com.spring.hibernate.SpringHibernate.University"/> 
+	
+	
+	<!-- <mapping class="com.spring.hibernate.map.Question"/> 
+	<mapping class="com.spring.hibernate.map.Answer"/>  -->
+	
+	
+	<!--  <mapping class="com.spring.hibernate.otm.Question"/> 
+	<mapping class="com.spring.hibernate.otm.Answer"/> -->  
+	
+	
+	<!-- <mapping class="com.spring.hibernate.mtm.Employee"/> 
+	<mapping class="com.spring.hibernate.mtm.Projects"/>  -->
+	
+	 <mapping class="com.spring.hibernate.cascading.Question"/> 
+	<mapping class="com.spring.hibernate.cascading.Answer"/>
+	
+	</session-factory>
+
+</hibernate-configuration>
