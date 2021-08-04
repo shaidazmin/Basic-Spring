@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Changing Bean for byName AutoWiring -->
+
+<!-- <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd"> -->
+
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+   <context:annotation-config/>
+
+<!-- 	<bean id="softObj" class="com.hellospring.SoftwareDept"></bean> -->
+	<bean id="sofDeptOne" class="com.hellospring.HardwareDept"></bean>
+	<bean id="sofDeptTwo" class="com.hellospring.SoftwareDept"></bean>
+
+	<!-- Using Constractor autowireing -->
+	<!-- <bean id="company" class="com.hellospring.Company" autowire="constructor"/> -->
+
+	<!-- byName autowiring -->
+	<bean id="company" class="com.hellospring.Company" autowire="default" />
+	
+	<!-- byType autowiring -->
+	<!-- <bean id="company" class="com.hellospring.Company" autowire="byType" /> -->
+	
+	<!-- default autowiring -->
+<!-- 	<bean id="company" class="com.hellospring.Company" autowire="default" /> -->
+
+	<!-- <constructor-arg name="sofDept" ref="softObj"></constructor-arg> <bean 
+		class="com.hellospring.SoftwareDept"></bean> -->
+
+	<!-- </bean> -->
+
+</beans>
